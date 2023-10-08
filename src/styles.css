@@ -1,1 +1,53 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --white: #f9f8f8;
+  --fontColor: #274c5b;
+  --primaryFont: "Roboto", sans-serif;
+  --secondaryFont: "Poppins", sans-serif;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: var(--primaryFont);
+  font-size: 1.6rem;
+  color: var(--fontColor);
+  line-height: 1.8;
+}
+h1,
+h2,
+h3 {
+  font-weight: 900;
+  margin: 2rem 0;
+}
+h1 {
+  font-size: 5rem;
+}
+h2 {
+  font-size: 4rem;
+}
+h3 {
+  font-size: 3rem;
+}
+a {
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  width: 90%;
+}
