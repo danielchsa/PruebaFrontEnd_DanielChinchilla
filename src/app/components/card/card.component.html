@@ -1,0 +1,9 @@
+<div class="card" [routerLink]="['/detail', recipe.id]">
+  <div class="card-image">
+    <img [src]="recipe.image" />
+  </div>
+  <div class="card-body">
+    <h3>{{ recipe.title }}</h3>
+    <p style="color: #808080">{{ recipe.description }}</p>
+  </div>
+</div>

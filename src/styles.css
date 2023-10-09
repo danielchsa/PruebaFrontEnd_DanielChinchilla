@@ -1,9 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
+  --primaryColor: #274c5b;
+  --secondaryColor: #488ba5;
+  --green: #7eb693;
+  --secondaryGreen: #448c60;
+  --yellow: #efd372;
   --white: #f9f8f8;
-  --fontColor: #274c5b;
-  --primaryFont: "Roboto", sans-serif;
-  --secondaryFont: "Poppins", sans-serif;
+  --gray: #d4d4d4;
+  --banner: #f1eff0;
+  --font: "Poppins", sans-serif;
 }
 
 html {
@@ -17,10 +22,10 @@ html {
 }
 
 body {
-  margin: 0;
-  font-family: var(--primaryFont);
+  margin: 0 0 20rem 0;
+  font-family: var(--font);
   font-size: 1.6rem;
-  color: var(--fontColor);
+  color: var(--primaryColor);
   line-height: 1.8;
 }
 h1,
@@ -30,16 +35,23 @@ h3 {
   margin: 2rem 0;
 }
 h1 {
-  font-size: 5rem;
-}
-h2 {
   font-size: 4rem;
 }
-h3 {
+h2 {
   font-size: 3rem;
+}
+h3 {
+  font-size: 2rem;
 }
 a {
   text-decoration: none;
+  cursor: pointer;
+}
+a:visited {
+  color: var(--primaryColor);
+}
+p {
+  margin: 1rem 0;
 }
 img {
   max-width: 100%;
@@ -50,4 +62,12 @@ img {
   max-width: 120rem;
   margin: 0 auto;
   width: 90%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt {
+  margin-top: 5rem;
 }

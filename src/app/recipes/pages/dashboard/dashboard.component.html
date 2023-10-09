@@ -1,1 +1,33 @@
-<p>dashboard works!</p>
+<div *ngIf="recipes.length > 0; else Message">
+  <main class="main-section">
+    <div class="container main-recipe">
+      <img [src]="lastRecipe.image" />
+
+      <div class="main-recipe-info">
+        <div>
+          <h2>{{ lastRecipe.title }}</h2>
+          <p>
+            {{ lastRecipe.description }}
+          </p>
+        </div>
+        <app-button name="Details" (click)="navigateTo()"></app-button>
+      </div>
+    </div>
+  </main>
+
+  <section class="container mt">
+    <h2 class="text-center">Más Recetas</h2>
+    <div class="recipes-grid">
+      <app-card
+        *ngFor="let recipe of recipes.slice(1, recipes.length)"
+        [recipe]="recipe"
+      ></app-card>
+    </div>
+  </section>
+</div>
+<ng-template #Message>
+  <h1 class="mt text-center">Aún no hay recetas agregadas</h1>
+  <p class="text-center" style="color: gray">
+    ¡Agrega y comparte tu receta hoy mismo!
+  </p>
+</ng-template>

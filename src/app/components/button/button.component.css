@@ -1,0 +1,36 @@
+.button {
+  width: 7rem;
+  padding: 1rem 0;
+  border: none;
+  border-radius: 0.6rem;
+  font-family: var(--font);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-primary {
+  background-color: var(--primaryColor);
+  color: var(--white);
+}
+
+.button-secondary {
+  background-color: var(--green);
+  color: var(--white);
+}
+
+@media (min-width: 768px) {
+  .button {
+    width: 10rem;
+    font-size: 1.4rem;
+    cursor: pointer;
+  }
+}
+
+.button-primary:hover {
+  background-color: var(--secondaryColor);
+}
+
+.button-secondary:hover {
+  background-color: var(--secondaryGreen);
+}

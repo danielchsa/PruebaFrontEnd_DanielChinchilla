@@ -1,0 +1,64 @@
+.form {
+  margin-top: 4rem;
+}
+.form-box {
+  margin-bottom: 2rem;
+}
+
+.form-box .image {
+  width: 100%;
+  min-height: 30rem;
+  border-radius: 0.6rem;
+  background-color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0.1rem dashed var(--primaryColor);
+}
+
+.form-label {
+  display: block;
+}
+.image-recipe {
+  height: 20rem;
+  border-radius: 0.6rem;
+}
+
+@media (min-width: 768px) {
+  .image-recipe {
+    height: 40rem;
+    border-radius: 0.6rem;
+  }
+}
+input,
+textarea {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.6rem;
+  border: 0.1rem solid var(--gray);
+}
+
+textarea {
+  resize: vertical;
+}
+
+@media (min-width: 768px) {
+  input,
+  textarea {
+    max-width: 100%;
+    padding: 1.3rem;
+    border-radius: 0.6rem;
+    border: 0.1rem solid var(--gray);
+  }
+}
+
+.text-error {
+  color: #cf2222;
+  font-size: 1.2rem;
+}
+
+.ingredient {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}

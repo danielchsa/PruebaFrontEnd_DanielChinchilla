@@ -1,1 +1,57 @@
-<p>add works!</p>
+<div class="container mt">
+  <h2 class="text-center">Agregar una Receta</h2>
+  <form class="form" (ngSubmit)="saveRecipe()" [formGroup]="recipeForm">
+    <div class="form-box">
+      <div class="image" (click)="loadFile()">
+        <label *ngIf="!image">Upload Image</label>
+        <input type="file" hidden #imgElement (change)="handleChange($event)" />
+        <img [src]="image" class="image-recipe" *ngIf="image" />
+      </div>
+      <span class="text-error" *ngIf="isInvalid('image')"
+        >This field is required</span
+      >
+    </div>
+    <div class="form-box">
+      <label class="form-label" for="title">Title</label>
+      <input type="text" id="title" formControlName="title" />
+      <span class="text-error" *ngIf="isInvalid('title')"
+        >This field is required</span
+      >
+    </div>
+    <div class="form-box">
+      <label class="form-label" for="description">Description</label>
+      <textarea id="description" rows="10" formControlName="description">
+      </textarea>
+      <span class="text-error" *ngIf="isInvalid('description')"
+        >This field is required</span
+      >
+    </div>
+
+    <div class="form-box">
+      <label class="form-label" for="ingredients-list">Ingredients:</label>
+      <div class="ingredient">
+        <input id="ingredients-list" [formControl]="newIngredient" />
+        <app-button
+          name="Add"
+          type="button"
+          (click)="addIngredient()"
+        ></app-button>
+      </div>
+      <span class="text-error" *ngIf="isInvalid('ingredients')"
+        >At least one ingredient is required</span
+      >
+    </div>
+    <div formArrayName="ingredients" *ngIf="ingredientsArray.length > 0">
+      <label class="form-label">List of ingredients:</label>
+      <div
+        class="form-box ingredient"
+        *ngFor="let ingredient of ingredientsArray.controls; index as i"
+      >
+        <input type="text" [formControlName]="i" readonly />
+        <app-button name="Delete" (click)="deleteIngredient(i)"></app-button>
+      </div>
+    </div>
+
+    <app-button name="Save" type="submit" [primary]="true"></app-button>
+  </form>
+</div>
