@@ -1,3 +1,7 @@
+<section>
+  <app-banner></app-banner>
+</section>
+
 <div *ngIf="recipes.length > 0; else Message">
   <main class="main-section">
     <div class="container main-recipe">
@@ -27,7 +31,7 @@
 </div>
 <ng-template #Message>
   <h1 class="mt text-center">Aún no hay recetas agregadas</h1>
-  <p class="text-center" style="color: gray">
+  <p class="text-center" style="color: var(--gray-secondary)">
     ¡Agrega y comparte tu receta hoy mismo!
   </p>
 </ng-template>

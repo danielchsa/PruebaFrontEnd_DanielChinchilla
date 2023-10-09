@@ -1,36 +1,28 @@
 .button {
-  width: 7rem;
+  width: 10rem;
   padding: 1rem 0;
   border: none;
   border-radius: 0.6rem;
   font-family: var(--font);
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .button-primary {
-  background-color: var(--primaryColor);
-  color: var(--white);
+  background-color: var(--primary);
+  color: var(--white-primary);
 }
 
 .button-secondary {
   background-color: var(--green);
-  color: var(--white);
-}
-
-@media (min-width: 768px) {
-  .button {
-    width: 10rem;
-    font-size: 1.4rem;
-    cursor: pointer;
-  }
+  color: var(--white-primary);
 }
 
 .button-primary:hover {
-  background-color: var(--secondaryColor);
+  background-color: var(--primary-hover);
 }
 
 .button-secondary:hover {
-  background-color: var(--secondaryGreen);
+  background-color: var(--green-hover);
 }

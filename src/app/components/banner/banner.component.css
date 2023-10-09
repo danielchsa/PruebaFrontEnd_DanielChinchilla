@@ -1,23 +1,8 @@
-/* .banner {
-  height: 30rem;
-  background-image: linear-gradient(
-      to right,
-      var(--banner) 50%,
-      transparent 50%,
-      transparent 100%
-    ),
-    url("../../../assets/images/banner-main.png");
-  background-size: 100%, 120rem;
-  background-repeat: no-repeat;
-  background-position: 100%, right center;
-  padding: 5rem;
-} */
-
 .banner {
   background-image: linear-gradient(
     to bottom,
     transparent 50%,
-    var(--banner) 100%
+    var(--white-secondary) 100%
   );
   position: relative;
   padding: 1.5rem 0;
@@ -27,7 +12,7 @@
   .banner {
     background-image: linear-gradient(
       to right,
-      var(--banner) 50%,
+      var(--white-secondary) 50%,
       transparent 100%
     );
     position: relative;
@@ -81,6 +66,6 @@
 }
 
 .banner-subtitle {
-  color: grey;
+  color: var(--gray-secondary);
   margin-bottom: 2rem;
 }

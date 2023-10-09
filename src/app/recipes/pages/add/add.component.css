@@ -9,11 +9,11 @@
   width: 100%;
   min-height: 30rem;
   border-radius: 0.6rem;
-  background-color: var(--white);
+  background-color: var(--white-primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 0.1rem dashed var(--primaryColor);
+  border: 0.1rem dashed var(--primary);
 }
 
 .form-label {
@@ -35,7 +35,7 @@ textarea {
   width: 100%;
   padding: 1rem;
   border-radius: 0.6rem;
-  border: 0.1rem solid var(--gray);
+  border: 0.1rem solid var(--gray-primary);
 }
 
 textarea {
@@ -48,7 +48,7 @@ textarea {
     max-width: 100%;
     padding: 1.3rem;
     border-radius: 0.6rem;
-    border: 0.1rem solid var(--gray);
+    border: 0.1rem solid var(--gray-primary);
   }
 }
 

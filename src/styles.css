@@ -1,13 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
 :root {
-  --primaryColor: #274c5b;
-  --secondaryColor: #488ba5;
+  --primary: #274c5b;
+  --primary-hover: #488ba5;
   --green: #7eb693;
-  --secondaryGreen: #448c60;
+  --green-hover: #448c60;
+  --gray-primary: #d4d4d4;
+  --gray-secondary: #808080;
+  --white-primary: #f9f8f8;
+  --white-secondary: #ededed;
   --yellow: #efd372;
-  --white: #f9f8f8;
-  --gray: #d4d4d4;
-  --banner: #f1eff0;
   --font: "Poppins", sans-serif;
 }
 
@@ -25,7 +25,7 @@ body {
   margin: 0 0 20rem 0;
   font-family: var(--font);
   font-size: 1.6rem;
-  color: var(--primaryColor);
+  color: var(--primary);
   line-height: 1.8;
 }
 h1,
@@ -48,7 +48,7 @@ a {
   cursor: pointer;
 }
 a:visited {
-  color: var(--primaryColor);
+  color: var(--primary);
 }
 p {
   margin: 1rem 0;
