@@ -3,32 +3,32 @@
   <form class="form" (ngSubmit)="saveRecipe()" [formGroup]="recipeForm">
     <div class="form-box">
       <div class="image" (click)="loadFile()">
-        <label *ngIf="!image">Upload Image</label>
+        <label *ngIf="!image">Subir una imagen</label>
         <input type="file" hidden #imgElement (change)="handleChange($event)" />
         <img [src]="image" class="image-recipe" *ngIf="image" />
       </div>
       <span class="text-error" *ngIf="isInvalid('image')"
-        >This field is required</span
+        >Este campo es requerido</span
       >
     </div>
     <div class="form-box">
-      <label class="form-label" for="title">Title</label>
+      <label class="form-label" for="title">Título</label>
       <input type="text" id="title" formControlName="title" />
       <span class="text-error" *ngIf="isInvalid('title')"
-        >This field is required</span
+        >Este campo es requerido</span
       >
     </div>
     <div class="form-box">
-      <label class="form-label" for="description">Description</label>
+      <label class="form-label" for="description">Descripción</label>
       <textarea id="description" rows="10" formControlName="description">
       </textarea>
       <span class="text-error" *ngIf="isInvalid('description')"
-        >This field is required</span
+        >Este campo es requerido</span
       >
     </div>
 
     <div class="form-box">
-      <label class="form-label" for="ingredients-list">Ingredients:</label>
+      <label class="form-label" for="ingredients-list">Ingredientes</label>
       <div class="ingredient">
         <input id="ingredients-list" [formControl]="newIngredient" />
         <app-button
@@ -38,11 +38,11 @@
         ></app-button>
       </div>
       <span class="text-error" *ngIf="isInvalid('ingredients')"
-        >At least one ingredient is required</span
+        >Al menos un ingrediente es requerido</span
       >
     </div>
     <div formArrayName="ingredients" *ngIf="ingredientsArray.length > 0">
-      <label class="form-label">List of ingredients:</label>
+      <label class="form-label">Lista de ingredientes</label>
       <div
         class="form-box ingredient"
         *ngFor="let ingredient of ingredientsArray.controls; index as i"

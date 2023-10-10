@@ -57,6 +57,24 @@ img {
   max-width: 100%;
   display: block;
 }
+input,
+textarea {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.6rem;
+  border: 0.1rem solid var(--gray-primary);
+}
+
+textarea {
+  resize: vertical;
+}
+
+@media (min-width: 768px) {
+  input,
+  textarea {
+    padding: 1.3rem;
+  }
+}
 
 .container {
   max-width: 120rem;
