@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { RecipesService } from '../../services/recipes.service';
 import { Recipe } from '../../interfaces/recipe.interface';
 import { Router } from '@angular/router';
@@ -8,18 +8,27 @@ import { Router } from '@angular/router';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
 })
-export class DashboardComponent implements OnInit {
-  recipes: Recipe[] = [];
+export class DashboardComponent {
+  filteredRecipes: Recipe[] = [];
   lastRecipe!: Recipe;
+  recipeName: string = '';
 
-  constructor(private recipeService: RecipesService, private router: Router) {}
-
-  ngOnInit(): void {
-    this.recipes = this.recipeService.getRecipes();
-    this.lastRecipe = this.recipes[0];
+  constructor(private recipeService: RecipesService, private router: Router) {
+    this.filteredRecipes = this.recipeService.getOldRecipes();
+    this.lastRecipe = this.recipeService.getLastRecipe();
   }
 
   navigateTo() {
     this.router.navigate(['/detail', this.lastRecipe.id]);
+  }
+
+  findRecipe() {
+    if (this.recipeName) {
+      this.filteredRecipes = this.recipeService.getRecipeByName(
+        this.recipeName.toLowerCase()
+      );
+    } else {
+      this.filteredRecipes = this.recipeService.getOldRecipes();
+    }
   }
 }

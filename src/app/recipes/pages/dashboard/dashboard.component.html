@@ -2,10 +2,15 @@
   <app-banner></app-banner>
 </section>
 
-<div *ngIf="recipes.length > 0; else Message">
+<div *ngIf="lastRecipe; else Message">
   <main class="main-section">
     <div class="container main-recipe">
-      <img [src]="lastRecipe.image" />
+      <div
+        class="
+      "
+      >
+        <img [src]="lastRecipe.image" />
+      </div>
 
       <div class="main-recipe-info">
         <div>
@@ -19,14 +24,26 @@
     </div>
   </main>
 
-  <section class="container mt">
-    <h2 class="text-center">Más Recetas</h2>
+  <section class="container mt" *ngIf="filteredRecipes.length > 0">
+    <header class="header-section">
+      <h2 class="">Más Recetas</h2>
+      <input
+        type="text"
+        placeholder="Busca una receta... "
+        [(ngModel)]="recipeName"
+        (input)="findRecipe()"
+      />
+    </header>
+    <h3 *ngIf="recipeName">
+      Resultados para: <span>"{{ recipeName }}"</span>
+    </h3>
     <div class="recipes-grid">
       <app-card
-        *ngFor="let recipe of recipes.slice(1, recipes.length)"
+        *ngFor="let recipe of filteredRecipes"
         [recipe]="recipe"
       ></app-card>
     </div>
+    <p *ngIf="filteredRecipes.length === 0">No hay resultados</p>
   </section>
 </div>
 <ng-template #Message>

@@ -2,6 +2,25 @@
   padding-top: 5rem;
 }
 
+.header-section {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .header-section {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media (min-width: 768px) {
+  input {
+    width: 30rem;
+  }
+}
+
 .main-recipe {
   display: flex;
   flex-direction: column;
@@ -21,10 +40,11 @@
   border-radius: 3rem;
   height: 30rem;
   object-fit: cover;
+  width: 100%;
 }
 @media (min-width: 768px) {
   .main-recipe img {
-    height: auto;
+    height: 40rem;
   }
 }
 
