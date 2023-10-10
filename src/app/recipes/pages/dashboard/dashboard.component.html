@@ -19,12 +19,12 @@
             {{ lastRecipe.description }}
           </p>
         </div>
-        <app-button name="Details" (click)="navigateTo()"></app-button>
+        <app-button name="Detalles" (click)="navigateTo()"></app-button>
       </div>
     </div>
   </main>
 
-  <section class="container mt" *ngIf="filteredRecipes.length > 0">
+  <section class="container mt">
     <header class="header-section">
       <h2 class="">Más Recetas</h2>
       <input
@@ -43,9 +43,12 @@
         [recipe]="recipe"
       ></app-card>
     </div>
-    <p *ngIf="filteredRecipes.length === 0">No hay resultados</p>
+    <p *ngIf="filteredRecipes.length === 0 && recipeName.length > 0">
+      No hay resultados
+    </p>
   </section>
 </div>
+<!-- //TODO: CAMBIAR EL ESTILO -->
 <ng-template #Message>
   <h1 class="mt text-center">Aún no hay recetas agregadas</h1>
   <p class="text-center" style="color: var(--gray-secondary)">

@@ -122,11 +122,6 @@ export class RecipesService {
   constructor() {}
 
   addRecipe(recipe: Recipe) {
-    // const ingredients = recipe.ingredients.map((ingredient: string) => ({
-    //   ingredient: ingredient,
-    //   selected: false,
-    // }));
-
     const newRecipe = {
       ...recipe,
       id: this.recipes.length + 1,
