@@ -10,6 +10,7 @@ import { Recipe } from '../../interfaces/recipe.interface';
 })
 export class DetailComponent {
   recipe!: Recipe;
+
   constructor(
     private activedRoute: ActivatedRoute,
     private recipeService: RecipesService
@@ -23,5 +24,10 @@ export class DetailComponent {
         console.log(this.recipe);
       },
     });
+  }
+
+  ver() {
+    const t = this.recipe.ingredients.filter((item) => item.selected);
+    console.log(t);
   }
 }

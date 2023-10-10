@@ -1,1 +1,23 @@
-<p>detail works!</p>
+<div class="bg-detail-product container">
+  <div class="detail-image">
+    <img [src]="recipe.image" />
+  </div>
+  <div class="detail-info">
+    <h1>{{ recipe.title }}</h1>
+    <p>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur
+      corrupti vel porro rerum? Incidunt, et sunt! Quidem fugiat veniam
+      suscipit, vel perspiciatis enim corporis vitae tempora dicta ducimus!
+      Soluta, minus. {{ recipe.description }}
+    </p>
+    <ul>
+      <li *ngFor="let item of recipe.ingredients">
+        <input type="checkbox" [(ngModel)]="item.selected" />
+        <span [ngClass]="{ 'line-through': item.selected }">
+          {{ item.ingredient }}
+        </span>
+      </li>
+    </ul>
+    <button (click)="ver()">Ver</button>
+  </div>
+</div>

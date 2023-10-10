@@ -24,13 +24,9 @@ export class AddComponent implements OnInit {
     image: [null, [Validators.required]],
     title: ['', [Validators.required, Validators.minLength(2)]],
     description: ['', [Validators.required, Validators.minLength(10)]],
-    ingredients: this.fb.array([], [Validators.required]),
+    ingredients: this.fb.array([], Validators.required),
+    ingredientInput: [''],
   });
-
-  newIngredient: FormControl = new FormControl('', [
-    Validators.required,
-    Validators.minLength(2),
-  ]);
 
   constructor(
     private fb: FormBuilder,
@@ -38,7 +34,14 @@ export class AddComponent implements OnInit {
     private recipeService: RecipesService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.ingredientsArray.push(
+      this.fb.group({
+        ingredient: ['Salsa'],
+        selected: [false],
+      })
+    );
+  }
 
   get ingredientsArray() {
     return this.recipeForm.get('ingredients') as FormArray;
@@ -52,13 +55,16 @@ export class AddComponent implements OnInit {
   }
 
   addIngredient() {
-    this.ingredientsArray.push(
-      new FormControl(this.newIngredient.value, [
-        Validators.required,
-        Validators.minLength(2),
-      ])
-    );
-    this.newIngredient.reset();
+    const newIngredient = this.recipeForm.get('ingredientInput')?.value.trim();
+    if (newIngredient !== '') {
+      this.ingredientsArray.push(
+        this.fb.group({
+          ingredient: [newIngredient],
+          selected: [false],
+        })
+      );
+      this.recipeForm.get('ingredientInput')?.reset();
+    }
   }
 
   deleteIngredient(index: number) {
@@ -72,7 +78,9 @@ export class AddComponent implements OnInit {
       return;
     }
 
+    delete this.recipeForm.value.ingredientInput;
     this.recipeService.addRecipe(this.recipeForm.value);
+
     this.router.navigate(['/']);
   }
 

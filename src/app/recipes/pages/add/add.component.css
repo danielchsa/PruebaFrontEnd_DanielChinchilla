@@ -30,26 +30,6 @@
     border-radius: 0.6rem;
   }
 }
-/* input,
-textarea {
-  width: 100%;
-  padding: 1rem;
-  border-radius: 0.6rem;
-  border: 0.1rem solid var(--gray-primary);
-}
-
-textarea {
-  resize: vertical;
-}
-
-@media (min-width: 768px) {
-  input,
-  textarea {
-    max-width: 100%;
-    padding: 1.3rem;
-  }
-} */
-
 .text-error {
   color: #cf2222;
   font-size: 1.2rem;
@@ -59,4 +39,11 @@ textarea {
   display: flex;
   align-items: center;
   gap: 0.3rem;
+}
+
+.ingredient-item {
+  width: 100%;
+  background-color: var(--white-primary);
+  padding: 1rem;
+  border-radius: 0.6rem;
 }

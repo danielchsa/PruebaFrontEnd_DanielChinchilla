@@ -57,7 +57,7 @@ img {
   max-width: 100%;
   display: block;
 }
-input,
+input[type="text"],
 textarea {
   width: 100%;
   padding: 1rem;
@@ -70,10 +70,14 @@ textarea {
 }
 
 @media (min-width: 768px) {
-  input,
+  input[type="text"],
   textarea {
     padding: 1.3rem;
   }
+}
+
+ul {
+  list-style: none;
 }
 
 .container {

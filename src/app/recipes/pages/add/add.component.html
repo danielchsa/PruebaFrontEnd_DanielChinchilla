@@ -30,9 +30,13 @@
     <div class="form-box">
       <label class="form-label" for="ingredients-list">Ingredientes</label>
       <div class="ingredient">
-        <input id="ingredients-list" [formControl]="newIngredient" />
+        <input
+          type="text"
+          id="ingredients-list"
+          formControlName="ingredientInput"
+        />
         <app-button
-          name="Add"
+          name="Añadir"
           type="button"
           (click)="addIngredient()"
         ></app-button>
@@ -47,11 +51,13 @@
         class="form-box ingredient"
         *ngFor="let ingredient of ingredientsArray.controls; index as i"
       >
-        <input type="text" [formControlName]="i" readonly />
-        <app-button name="Delete" (click)="deleteIngredient(i)"></app-button>
+        <div class="ingredient-item">
+          {{ ingredient.value.ingredient }}
+        </div>
+        <app-button name="Borrar" (click)="deleteIngredient(i)"></app-button>
       </div>
     </div>
 
-    <app-button name="Save" type="submit" [primary]="true"></app-button>
+    <app-button name="Guardar" type="submit" [primary]="true"></app-button>
   </form>
 </div>
