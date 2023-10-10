@@ -3,7 +3,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 5rem;
-    place-items: center;
+    align-items: center;
   }
 }
 
@@ -26,7 +26,28 @@
   height: 100%;
   object-fit: cover;
 }
-.line-through {
+.ingredients-list {
+  margin-top: 3rem;
+}
+
+.ingredients-list ul li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.ingredients-list ul li:last-child {
+  margin-bottom: 0;
+}
+
+.marked {
   color: var(--gray-secondary);
   text-decoration: line-through;
+}
+
+.label-ingredient {
+  font-size: 1.8rem;
+  font-weight: 500;
+  cursor: pointer;
 }

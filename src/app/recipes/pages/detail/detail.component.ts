@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RecipesService } from '../../services/recipes.service';
 import { Recipe } from '../../interfaces/recipe.interface';
 
@@ -13,6 +13,7 @@ export class DetailComponent {
 
   constructor(
     private activedRoute: ActivatedRoute,
+    private router: Router,
     private recipeService: RecipesService
   ) {}
 
@@ -20,14 +21,13 @@ export class DetailComponent {
     this.activedRoute.params.subscribe({
       next: ({ id }) => {
         const idRecipe = parseInt(id);
-        this.recipe = this.recipeService.getSingleRecipe(idRecipe);
-        console.log(this.recipe);
+        const recipe = this.recipeService.getSingleRecipe(idRecipe);
+        if (!recipe) {
+          this.router.navigate(['/']);
+          return;
+        }
+        this.recipe = recipe;
       },
     });
-  }
-
-  ver() {
-    const t = this.recipe.ingredients.filter((item) => item.selected);
-    console.log(t);
   }
 }

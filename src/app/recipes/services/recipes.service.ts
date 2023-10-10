@@ -4,9 +4,6 @@ import { Recipe } from '../interfaces/recipe.interface';
 @Injectable({
   providedIn: 'root',
 })
-/**
- * Tacos al pastor de mexico receta imperdible no te puedes quedar sin probar estos tacos con salsa de aguacate y otros sabores increibles
- */
 export class RecipesService {
   recipes: Recipe[] = [
     {
