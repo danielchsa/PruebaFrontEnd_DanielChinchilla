@@ -5,6 +5,7 @@ import { BannerComponent } from './banner/banner.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule } from '@angular/router';
 import { CardComponent } from './card/card.component';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -12,8 +13,15 @@ import { CardComponent } from './card/card.component';
     BannerComponent,
     NavbarComponent,
     CardComponent,
+    ModalComponent,
   ],
   imports: [CommonModule, RouterModule],
-  exports: [ButtonComponent, BannerComponent, NavbarComponent, CardComponent],
+  exports: [
+    ButtonComponent,
+    BannerComponent,
+    NavbarComponent,
+    CardComponent,
+    ModalComponent,
+  ],
 })
 export class ComponentsModule {}

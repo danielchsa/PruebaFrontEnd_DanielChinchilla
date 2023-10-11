@@ -1,0 +1,22 @@
+<div class="modal-bg" *ngIf="openModal">
+  <section class="modal-container">
+    <header class="modal-header">
+      <h2 class="text-center">{{ title }}</h2>
+    </header>
+    <div class="modal-body">
+      <ng-content></ng-content>
+      <footer class="modal-actions">
+        <app-button
+          *ngIf="close"
+          name="Cancelar"
+          (click)="cancelAction()"
+        ></app-button>
+        <app-button
+          name="Confirmar"
+          [primary]="true"
+          (click)="confirmAction()"
+        ></app-button>
+      </footer>
+    </div>
+  </section>
+</div>

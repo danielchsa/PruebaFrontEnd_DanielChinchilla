@@ -124,3 +124,7 @@ ul {
 .mt {
   margin-top: 5rem;
 }
+
+.text-secondary {
+  color: var(--gray-secondary);
+}

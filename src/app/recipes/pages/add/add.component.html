@@ -1,6 +1,6 @@
 <div class="container mt">
   <h2 class="text-center">Agregar una Receta</h2>
-  <form class="form" (ngSubmit)="saveRecipe()" [formGroup]="recipeForm">
+  <form class="form" (ngSubmit)="openModal()" [formGroup]="recipeForm">
     <div class="form-box">
       <div class="image" (click)="loadFile()">
         <label *ngIf="!image">Subir una imagen</label>
@@ -61,3 +61,9 @@
     <app-button name="Guardar" type="submit" [primary]="true"></app-button>
   </form>
 </div>
+
+<app-modal title="Atención" [close]="true" (handleModal)="saveRecipe($event)">
+  <p class="text-center">
+    Estás apunto de guardar una receta. ¿Estás seguro de continuar?
+  </p>
+</app-modal>

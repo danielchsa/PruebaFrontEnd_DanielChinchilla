@@ -1,14 +1,10 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 
-import {
-  FormBuilder,
-  FormGroup,
-  Validators,
-  FormArray,
-  FormControl,
-} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
 import { RecipesService } from '../../services/recipes.service';
 import { Router } from '@angular/router';
+
+import { ModalComponent } from 'src/app/components/modal/modal.component';
 
 @Component({
   selector: 'app-add',
@@ -16,7 +12,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./add.component.css'],
 })
 export class AddComponent implements OnInit {
-  @ViewChild('imgElement', { static: false }) imgElementRef!: ElementRef;
+  @ViewChild('imgElement') imgElementRef!: ElementRef;
+  @ViewChild(ModalComponent) modal!: ModalComponent;
 
   image: string = '';
 
@@ -34,14 +31,7 @@ export class AddComponent implements OnInit {
     private recipeService: RecipesService
   ) {}
 
-  ngOnInit(): void {
-    this.ingredientsArray.push(
-      this.fb.group({
-        ingredient: ['Salsa'],
-        selected: [false],
-      })
-    );
-  }
+  ngOnInit(): void {}
 
   get ingredientsArray() {
     return this.recipeForm.get('ingredients') as FormArray;
@@ -71,16 +61,20 @@ export class AddComponent implements OnInit {
     this.ingredientsArray.removeAt(index);
   }
 
-  saveRecipe() {
+  openModal() {
     if (this.recipeForm.invalid) {
       this.recipeForm.markAllAsTouched();
-      console.log('inavlid');
       return;
     }
 
+    this.modal.open();
+  }
+
+  saveRecipe(actionResult: boolean) {
+    if (!actionResult) return;
+
     delete this.recipeForm.value.ingredientInput;
     this.recipeService.addRecipe(this.recipeForm.value);
-
     this.router.navigate(['/']);
   }
 
@@ -92,8 +86,10 @@ export class AddComponent implements OnInit {
     const file = event.target.files[0];
 
     if (!file) return;
-    this.recipeForm.get('image')?.setValue(URL.createObjectURL(file));
 
-    this.image = URL.createObjectURL(file);
+    const urlImage = URL.createObjectURL(file);
+    this.recipeForm.get('image')?.setValue(urlImage);
+
+    this.image = urlImage;
   }
 }
