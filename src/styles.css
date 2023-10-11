@@ -1,10 +1,10 @@
 :root {
   --primary: #274c5b;
-  --primary-hover: #488ba5;
-  --green: #7eb693;
-  --green-hover: #448c60;
+  --primary-hover: #3f788f;
+  --green: #326a48;
+  --green-hover: #3d7d56;
   --gray-primary: #d4d4d4;
-  --gray-secondary: #808080;
+  --gray-secondary: #595959;
   --white-primary: #f9f8f8;
   --white-secondary: #ededed;
   --yellow: #efd372;
@@ -62,7 +62,7 @@ textarea {
   width: 100%;
   padding: 1rem;
   border-radius: 0.6rem;
-  border: 0.1rem solid var(--gray-primary);
+  border: 0.1rem solid var(--primary);
 }
 
 textarea {

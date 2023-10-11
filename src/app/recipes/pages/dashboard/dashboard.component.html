@@ -5,11 +5,11 @@
 <div *ngIf="lastRecipe; else Message">
   <main class="main-section">
     <div class="container main-recipe">
-      <div
-        class="
-      "
-      >
-        <img [src]="lastRecipe.image" />
+      <div>
+        <img
+          [src]="lastRecipe.image"
+          [alt]="'Imagen de la receta ' + lastRecipe.title"
+        />
       </div>
 
       <div class="main-recipe-info">

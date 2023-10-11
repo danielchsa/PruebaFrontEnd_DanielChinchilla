@@ -19,8 +19,8 @@ export class AddComponent implements OnInit {
 
   recipeForm: FormGroup = this.fb.group({
     image: [null, [Validators.required]],
-    title: ['', [Validators.required, Validators.minLength(2)]],
-    description: ['', [Validators.required, Validators.minLength(10)]],
+    title: ['', [Validators.required, Validators.minLength(1)]],
+    description: ['', [Validators.required, Validators.minLength(1)]],
     ingredients: this.fb.array([], Validators.required),
     ingredientInput: [''],
   });
