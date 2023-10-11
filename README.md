@@ -1,27 +1,26 @@
 # PruebaFrontEndDanielChinchilla
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
+## Descripción
 
-## Development server
+Es una aplicación web que consiste en visualizar y agregar recetas. Cuenta con un buscador para filtrar las recetas por su nombre. Por otra parte, en el detalle de cada receta tendrá los ingredientes
+listados y podrá marcar y desmarcalos según lo necesite.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Características
 
-## Code scaffolding
+- **Dashboard**: Vista principal, ofrece una visualización de todas las recetas. En primer plano aparecerá siempre la última receta agregada.
+- **Agregar**: Muestra un formulario para crear una receta.
+- **Detalle**: Una vista individual de cada receta.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Instalación
 
-## Build
+1. Clone este repositorio: `git clone https://github.com/danielchsa/PruebaFrontEnd_DanielChinchilla.git`
+2. Navegue al directorio del proyecto: `cd PruebaFrontEnd_DanielChinchilla`
+3. Instale las dependencias: `npm install`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Uso 
+1. Inicie la aplicación: `ng serve`
+2. Navegue a `http//:localhost:4200/`
 
-## Running unit tests
+## Notas Adicionales
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Este proyecto fue generado con la versión 15.2.4 de Angular CLI.
